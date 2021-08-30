@@ -1,4 +1,5 @@
 opencv-python
+libgl1-mesa-glx
 numpy
 streamlit
 matplotlib
