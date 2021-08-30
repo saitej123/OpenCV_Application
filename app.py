@@ -72,7 +72,9 @@ if uploaded_file is not None:
     st.code("""
             colored_img = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2HSV)
             """, language='python')
+    
     # Gaussian blur
+    #opencv_image_rgb = cv2.cvtColor(colored_img, cv2.COLOR_BGR2RGB)
     opencv_image_rgb = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
     st.sidebar.subheader("Gaussian Blur")
     selected_kernel_size = st.sidebar.slider('Kernel size', 1, 49, step=2)
@@ -86,19 +88,31 @@ if uploaded_file is not None:
     """, language='python')
     st.image(blurred_img)
     
-    # Adaptive threshold (default Binary)
-    st.sidebar.subheader("Adaptive Thresholding ")
+    # Threshold (default Binary)
+    st.sidebar.subheader("Thresholding")
     threshold_min = st.sidebar.slider("Threshold_min", 0, 255, step=1, value=100)
     threshold_max = st.sidebar.slider("Threshold_max", 0, 255, step=1, value=255)
+    #Block_size = st.sidebar.slider("Block_size", 0, 50, step=1, value=11)
     selected_image_type = st.sidebar.selectbox(
         "Apply on:", ["Original image", "Blurred image"])
     
+    # opencv_image_rgb = cv2.cvtColor(opencv_image_rgb, cv2.COLOR_BGR2GRAY)
+    # blurred_img = cv2.cvtColor(blurred_img, cv2.COLOR_BGR2GRAY)
+    
     if selected_image_type.startswith("Original"):
-        _,thrsh_img = cv2.threshold(opencv_image_rgb, threshold_min, threshold_max, cv2.THRESH_BINARY)
+        _, thrsh_img = cv2.threshold(
+            opencv_image_rgb, threshold_min, threshold_max, cv2.THRESH_BINARY)
+    #    thrsh_img= cv2.adaptiveThreshold(
+    #         colored_img, threshold_max, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, Block_size, 2)
+                           
     else:
         _, thrsh_img = cv2.threshold(
-             blurred_img, threshold_min, threshold_max, cv2.THRESH_BINARY)
-    st.write("""### Adaptive threshold :""")
+            blurred_img, threshold_min, threshold_max, cv2.THRESH_BINARY)
+        # thrsh_img= cv2.adaptiveThreshold(
+        #     blurred_img, threshold_max, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, Block_size, 2)
+            
+        
+    st.write("""### Thresholding :""")
     st.code("""
     thrsh_img = cv2.threshold(opencv_image_rgb, threshold_min, threshold_max, cv2.THRESH_BINARY)
     """, language='python')
