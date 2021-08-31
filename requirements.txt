@@ -3,3 +3,5 @@ numpy
 streamlit
 matplotlib
 tesseract-ocr
+python-multipart
+pytesseract
