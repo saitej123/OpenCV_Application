@@ -3,11 +3,11 @@ import cv2
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
-import pytesseract
+#import pytesseract
 
 
 st.set_page_config(layout="wide")
-pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
+#pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.markdown(
@@ -251,10 +251,10 @@ if uploaded_file is not None:
         else:
             final_img=erroded_img
         
-        ocr_result = pytesseract.image_to_string(final_img, lang='eng')
+        #ocr_result = pytesseract.image_to_string(final_img, lang='eng')
         st.write("Ohh Crappy results !!")
-        l11, l21 = st.columns(2)
-        with l11:
-            st.image(final_img)
-        with l21:
-            st.write(ocr_result)
+        # l11, l21 = st.columns(2)
+        # with l11:
+        #     st.image(final_img)
+        # with l21:
+        #     st.write(ocr_result)

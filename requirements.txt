@@ -3,9 +3,7 @@ opencv-python-headless
 numpy
 streamlit
 matplotlib
-tesserocr
 python-multipart
-pytesseract
 Cython
 pillow 
 
