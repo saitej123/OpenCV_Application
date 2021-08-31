@@ -2,6 +2,9 @@ opencv-python-headless
 numpy
 streamlit
 matplotlib
+libtesseract
 tesseract-ocr
 python-multipart
 pytesseract
+Cython
+pillow 
