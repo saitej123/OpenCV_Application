@@ -2,3 +2,5 @@ opencv-python-headless
 numpy
 streamlit
 matplotlib
+tesseract-ocr
+tesseract-ocr-por
