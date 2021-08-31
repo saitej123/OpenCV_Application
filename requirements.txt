@@ -4,6 +4,7 @@ streamlit
 matplotlib
 tesserocr
 tesseract-ocr
+tesseract-ocr-por
 python-multipart
 pytesseract
 Cython
