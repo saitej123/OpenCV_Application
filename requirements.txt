@@ -2,7 +2,7 @@ opencv-python-headless
 numpy
 streamlit
 matplotlib
-libtesseract-dev
+tesserocr
 tesseract-ocr
 python-multipart
 pytesseract
