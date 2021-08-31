@@ -1,11 +1,14 @@
+
+freeglut3-dev
+libgtk2.0-dev
 opencv-python-headless
 numpy
 streamlit
 matplotlib
 tesserocr
 tesseract-ocr
-tesseract-ocr-por
 python-multipart
 pytesseract
 Cython
 pillow 
+
